@@ -23,6 +23,8 @@ Visualize the U.S. Treasury yield curve and manage bond order submissions. Built
 - [uv](https://docs.astral.sh/uv/) for managing virtual environments, dependencies, and server builds
 - [Python 3.13](https://www.python.org/downloads/) for development
 - [Alembic](https://alembic.sqlalchemy.org/en/latest/index.html) for running database migrations
+- [Node](https://nodejs.org/en) for installing client dependencies
+- [nvm](https://github.com/nvm-sh/nvm) for installing Node
 
 ---
 
@@ -41,7 +43,7 @@ cd yield-curve-dashboard
 docker compose up
 ```
 
-3. Enter `localhost:3000` in your browser
+3. Enter `localhost:5173` in your browser
 
 ---
 
@@ -85,7 +87,7 @@ uv run alembic revision --autogenerate -m "<COMMIT_MSG>"
 uv run fastapi dev src/yieldcurve/main.py
 ```
 
-5. Set up the client
+5. Set up the client (requires Node)
 
 ```bash
 cd client

@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * @note
  * This dev-only implementation uses header-based "Bearer <user_id>" auth and minimal identity checks.
@@ -29,7 +27,7 @@ const LoginPage = () => {
 
     try {
       await login.mutateAsync({ username });
-      navigate("/todo");
+      navigate("/yieldcurve");
     } catch (error: any) {
       const message = error?.message || "Login failed. Please try again.";
       setFormError(message);

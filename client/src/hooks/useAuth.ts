@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * @note
  * This dev-only implementation uses header-based "Bearer <user_id>" auth and minimal identity checks.

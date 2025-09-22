@@ -16,13 +16,11 @@ const HeroPage = () => {
 
       <main className="flex-grow flex flex-col justify-center items-center px-6 text-center">
         <h1 className="text-white text-5xl sm:text-6xl font-extrabold max-w-4xl leading-tight">
-          Get Things Done, Effortlessly
+          Your Yield Curve Command Center
         </h1>
         <p className="mt-6 text-gray-400 max-w-2xl text-lg sm:text-xl">
-          Stay organized and boost your productivity with our simple, intuitive
-          todo app. Create tasks, set priorities, and track your progress—all in
-          one place. Whether you’re managing daily errands or big projects, our
-          app helps you focus on what matters most.
+          Navigate interest rate markets with confidence. Visualize term
+          structures and act precisely — all in one unified dashboard.
         </p>
 
         <Link

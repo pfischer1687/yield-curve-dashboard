@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router";
 import HeroPage from "./pages/HeroPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import TodoPage from "./pages/TodoPage";
+import YieldCurvePage from "./pages/YieldCurvePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 
@@ -13,10 +13,10 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route
-        path="/todo"
+        path="/yieldcurve"
         element={
           <ProtectedRoute>
-            <TodoPage />
+            <YieldCurvePage />
           </ProtectedRoute>
         }
       />

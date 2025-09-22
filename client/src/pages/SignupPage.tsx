@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * @note
  * This dev-only implementation uses header-based "Bearer <user_id>" auth and minimal identity checks.
@@ -26,7 +24,7 @@ const SignupPage = () => {
 
     try {
       await signup.mutateAsync({ username: username });
-      navigate("/todo");
+      navigate("/yieldcurve");
     } catch (err: any) {
       setError(err?.message || "Signup failed.");
     }
