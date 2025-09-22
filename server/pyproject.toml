@@ -3,9 +3,9 @@ requires = ["uv_build>=0.8.17,<0.9.0"]
 build-backend = "uv_build"
 
 [project]
-name = "todo"
+name = "yieldcurve"
 version = "0.1.0"
-description = "Full-stack to-do app template with FastAPI, React (Vite + TS + Tailwind), PostgreSQL, and SQLAlchemy."
+description = "Visualize the U.S. Treasury yield curve and manage bond order submissions. Built with FastAPI, React, and PostgreSQL."
 requires-python = ">=3.13"
 authors = [
     {name = "Paul Fischer", email = "paulfischerdev@gmail.com"}
@@ -31,6 +31,7 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "pydantic>=2.11.9",
     "pydantic-settings>=2.10.1",
+    "requests>=2.32.5",
     "sqlalchemy[asyncio]>=2.0.43",
 ]
 
@@ -48,15 +49,15 @@ dev = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/pfischer1687/vite-fastapi-starter/README.md"
-Repository = "https://github.com/pfischer1687/vite-fastapi-starter"
-Issues = "https://github.com/pfischer1687/vite-fastapi-starter/issues"
+Documentation = "https://github.com/pfischer1687/yield-curve-dashboard/README.md"
+Repository = "https://github.com/pfischer1687/yield-curve-dashboard"
+Issues = "https://github.com/pfischer1687/yield-curve-dashboard/issues"
 
 [tool.ruff]
 line-length = 120
 target-version = 'py313'
 exclude = [
-  "src/todo/alembic"
+  "src/yieldcurve/alembic"
 ]
 
 [tool.ruff.lint]
@@ -75,7 +76,7 @@ ignore = ["B008", "D105"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = ["D"]
-"src/todo/db/models_registry.py" = ["F401"]
+"src/yieldcurve/db/models_registry.py" = ["F401"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"

@@ -5,8 +5,6 @@ services:
     shm_size: 128mb
     environment:
       POSTGRES_PASSWORD: example
-    volumes:
-      - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -23,6 +21,3 @@ services:
     build: ./client
     ports:
       - "3000:80"
-
-volumes:
-  db_data:

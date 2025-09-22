@@ -1,7 +1,6 @@
-# vite-fastapi-starter
+# Yield Curve Dashboard
 
-A full-stack todo app you can use as a template for projects using Python, FastAPI, SQLAlchemy, Typescript, React, Vite,
-Tailwind, and PostgreSQL!
+Visualize the U.S. Treasury yield curve and manage bond order submissions. Built with FastAPI, React, and PostgreSQL.
 
 ---
 
@@ -11,7 +10,6 @@ Tailwind, and PostgreSQL!
   - [Prerequisites](#prerequisites)
   - [Running via Docker](#running-via-docker)
   - [Running in Development](#running-in-development)
-- [Linting and Testing](#linting-and-testing)
 - [License](#license)
 
 ---
@@ -33,8 +31,8 @@ Tailwind, and PostgreSQL!
 1. Clone the repo
 
 ```bash
-git clone git@github.com:pfischer1687/vite-fastapi-starter.git
-cd vite-fastapi-starter
+git clone git@github.com:pfischer1687/yield-curve-dashboard.git
+cd yield-curve-dashboard
 ```
 
 2. Start the Docker containers (DB, server, and client)
@@ -66,21 +64,25 @@ pip install -r pyproject.toml --all-extras
 
 3. Run the database migration via Alembic
 
+First you have to replace the `db` in `sqlalchemy.url` in `server/src/yieldcurve/alembic.ini` with `localhost` (also in
+`db_url` in `server/src/yieldcurve/core/config.py`), then you
+can run the migration:
+
 ```bash
-cd server/src/todo
+cd server/src/yieldcurve
 uv run alembic upgrade head
 ```
 
-If you want to generate your own migrations after updating the DB models:
+If you need to generate your own migrations after updating the DB models:
 
 ```bash
-alembic revision --autogenerate -m "<COMMIT_MSG>"
+uv run alembic revision --autogenerate -m "<COMMIT_MSG>"
 ```
 
 4. Start the server
 
 ```bash
-uv run fastapi dev src/todo/main.py
+uv run fastapi dev src/yieldcurve/main.py
 ```
 
 5. Set up the client
@@ -92,28 +94,6 @@ npm run dev
 ```
 
 6. Open `localhost:3000` in a browser
-
----
-
-## Linting and Testing
-
-You can lint the client with:
-
-```bash
-npx prettier . --write
-```
-
-and you can lint, format, and type check the server with:
-
-```bash
-uv run pre-commit run --all-files
-```
-
-and you can run the server's suite of unit tests with:
-
-```bash
-uv run pytest -s -vvv
-```
 
 ---
 
